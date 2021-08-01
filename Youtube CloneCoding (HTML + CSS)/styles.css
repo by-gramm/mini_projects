@@ -1,0 +1,275 @@
+:root {
+  --main-color: white;
+  --point-color: red;
+  --background-color: rgb(44, 44, 44);
+}
+
+body {
+  margin: 0;
+}
+
+.navbar {
+  background-color: var(--background-color);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .navbar_logo {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.5rem;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.navbar .navbar_logo i {
+  color: var(--point-color);
+}
+
+.navbar a {
+  padding: 0.4rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--main-color);
+}
+
+.navbar .navbar_buttons a, a:focus {
+  color: silver;
+}
+
+#searchBar {
+  display: none;
+  width: 10rem;
+}
+
+#searchBar.active {
+  display: inline-flex;
+}
+
+.main_video {
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+} 
+
+.main_video iframe {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.info {
+  margin: 0.5rem 1rem;
+}
+
+.info .info_tags {
+  margin: 0;
+  padding: 0;
+}
+
+.info .info_tags a {
+  text-decoration: none;
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+  color: blue;
+}
+
+.info .info_views {
+  font-size: 0.75rem;
+  color:dimgrey;
+}
+
+.info .info_actions {
+  margin: 0.75rem 5%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .info_actions div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info .info_actions div button {
+  border: 0;
+  outline: 0;
+  background-color: var(--main-color);
+  color: black;
+  font-size: 1.5rem;
+}
+
+.info hr {
+  color: silver;
+  border: 0.1px solid silver;
+}
+
+.info .info_channel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 0.5rem;
+}
+
+.info .info_channel .profile {
+  display: flex;
+  align-items: center;
+}
+
+.info .info_channel .profile a {
+  display: flex;
+}
+
+.info .info_channel .profile a img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.info .info_channel .profile .channel {
+  display: flex;
+  flex-direction: column;
+}
+
+.info .info_channel .profile .channel a, a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+#channel_name {
+  font-weight: bold;
+}
+
+#channel_subscribers {
+  font-size: 0.5rem;
+  color: dimgrey;
+}
+
+#subscribeBtn {
+  border: 0;
+  outline: 0;
+  background-color: var(--main-color);
+  color: var(--point-color);
+  font-size: 1rem;
+}
+
+.recommends {
+  margin: 1rem;
+}
+
+.recommends .thumbnail {
+  width: 100%;
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+
+.recommends div {
+  margin: 0;
+  padding: 0;
+}
+
+.recommends div a {
+  text-decoration: none;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+}
+
+.recommends div .profile {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.recommends .profile .profile_image {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0;
+  align-self: center;
+  border-radius: 50%;
+}
+
+.recommends .profile .info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.25rem;
+}
+
+.recommends .profile .info_detail {
+  font-size: 0.5rem;
+  color: dimgrey;
+  padding-left: 0.05rem;
+}
+
+@media screen and (min-width: 60rem) {
+
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  #searchBar {
+    width: 20rem;
+  }
+
+  .main_video {
+    position: relative;
+    width: 100%;
+  }
+
+  .info {
+    display: inline-block;
+    width: 70%;
+    margin: 1rem 0 0 0;
+  }
+
+  .info .info_tags a {
+    font-size: 0.9rem;
+  }
+
+  .info .info_title {
+    font-size: 1.2rem;
+    margin: 0.2rem 0 0.3rem 0;
+  }
+
+  .info .info_views {
+    font-size: 0.9rem;
+  }
+
+  .info .info_actions div button {
+    font-size: 1.8rem;
+  }
+
+  #channel_subscribers {
+    font-size: 0.75rem;
+  }
+
+  .recommends {
+    align-self: flex-end;
+    width: 25%;
+    margin: 1rem 0 0 0;
+  }
+
+}
+
+@media screen and (min-width: 80rem) {
+
+  .info {
+    width: 75%;
+  }
+
+  .recommends {
+    width: 20%;
+  }
+}

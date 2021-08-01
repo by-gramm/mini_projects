@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="navbar_logo" href="https://www.youtube.com">
+      <i class="fab fa-youtube"></i>
+      Premium
+    </a>
+    <div class="navbar_buttons">
+      <input type="text" id="searchBar">
+      <a id="searchBtn" href="#">
+        <i class="fas fa-search"></i>
+      </a>
+      <a id="ellipsisBtn" href="#">
+        <i class="fas fa-ellipsis-v"></i>
+      </a>
+    </div>
+  </nav>
+  <main class="main_video">
+    <iframe src="https://www.youtube.com/embed/CE2bTNQJNUg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </main>
+  <div class="info">
+    <ul class="info_tags">
+      <a href="https://www.youtube.com/results?search_query=%23redvelvet">#RedVelvet</a>
+      <a href="https://www.youtube.com/results?search_query=%23%EB%A0%88%EB%93%9C%EB%B2%A8%EB%B2%B3">#레드벨벳</a>
+      <a href="https://www.youtube.com/results?search_query=%23queensarchive">#QueensArchive</a>
+    </ul>
+    <div class="info_title">
+      Queens Archive - Red Velvet 레드벨벳 'Somethin Kinda Crazy'
+    </div>
+    <div class="info_views">
+      조회수 142만회 · 2021.7.25
+    </div>
+    <ul class="info_actions">
+      <div>
+        <button id="likeBtn">
+          <i onclick="checkLike(this)" class="far fa-thumbs-up"></i>
+        </button>
+        27만
+      </div>
+      <div>
+        <button class="dislikeBtn">
+          <i onclick="checkLike(this)"class="far fa-thumbs-down"></i>
+        </button>
+        1.1천
+      </div>
+      <div>
+        <button class="shareBtn"><i class="fas fa-share"></i></button>
+        공유
+      </div>
+      <div>
+        <button class="saveBtn"><i class="far fa-plus-square"></i></button>
+        저장
+      </div>
+      <div>
+        <button class="reportBtn"><i class="far fa-flag"></i></button>
+        신고
+      </div>
+    </ul>
+    <hr/>
+    <div class="info_channel">
+      <div class="profile">
+        <a href="https://www.youtube.com/channel/UCk9GmdlDTBfgGRb7vXeRMoQ">
+          <img src="images/red-velvet-logo.jpeg" alt="채널_프로필" class="profile_image">
+        </a>
+        <div class="channel">
+          <a href="https://www.youtube.com/channel/UCk9GmdlDTBfgGRb7vXeRMoQ">
+            <div id="channel_name">Red Velvet</div>
+          </a>
+          <div id="channel_subscribers">구독자 422만명</div>
+        </div>
+      </div>
+      <button id="subscribeBtn">구독</button>
+    </div>
+    <hr/>
+  </div>
+  <div class="recommends">
+    <div class="recommends_video1">
+      <img src="images/atlantis_thumbnail.jpeg" class="thumbnail">
+      <div class="profile">
+        <a href="https://www.youtube.com/user/SMTOWN">
+          <img src="images/smtown_logo.png" alt="채널_프로필" class="profile_image">
+        </a>
+        <div class="info">
+          <div class="title">SHINEE 샤이니 'Atlantis' MV</div>
+          <div class="info_detail">SMTOWN · 조회수 2105만회 · 3개월 전</div>
+        </div>
+      </div>
+    </div>
+    <div class="recommends_video2">
+      <img src="images/atlantis_thumbnail.jpeg" class="thumbnail">
+      <div class="profile">
+        <a href="https://www.youtube.com/user/SMTOWN">
+          <img src="images/smtown_logo.png" alt="채널_프로필" class="profile_image">
+        </a>
+        <div class="info">
+          <div class="title">SHINEE 샤이니 'Atlantis' MV</div>
+          <div class="info_detail">SMTOWN · 조회수 2105만회 · 3개월 전</div>
+        </div>
+      </div>
+    </div>
+    <div class="recommends_video3">
+      <img src="images/atlantis_thumbnail.jpeg" class="thumbnail">
+      <div class="profile">
+        <a href="https://www.youtube.com/user/SMTOWN">
+          <img src="images/smtown_logo.png" alt="채널_프로필" class="profile_image">
+        </a>
+        <div class="info">
+          <div class="title">SHINEE 샤이니 'Atlantis' MV</div>
+          <div class="info_detail">SMTOWN · 조회수 2105만회 · 3개월 전</div>
+        </div>
+      </div>
+    </div>
+    <div class="recommends_video4">
+      <img src="images/atlantis_thumbnail.jpeg" class="thumbnail">
+      <div class="profile">
+        <a href="https://www.youtube.com/user/SMTOWN">
+          <img src="images/smtown_logo.png" alt="채널_프로필" class="profile_image">
+        </a>
+        <div class="info">
+          <div class="title">SHINEE 샤이니 'Atlantis' MV</div>
+          <div class="info_detail">SMTOWN · 조회수 2105만회 · 3개월 전</div>
+        </div>
+      </div>
+    </div>
+    <div class="recommends_video5W">
+      <img src="images/atlantis_thumbnail.jpeg" class="thumbnail">
+      <div class="profile">
+        <a href="https://www.youtube.com/user/SMTOWN">
+          <img src="images/smtown_logo.png" alt="채널_프로필" class="profile_image">
+        </a>
+        <div class="info">
+          <div class="title">SHINEE 샤이니 'Atlantis' MV</div>
+          <div class="info_detail">SMTOWN · 조회수 2105만회 · 3개월 전</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
