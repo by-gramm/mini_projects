@@ -1,0 +1,137 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-black);
+}
+
+.container {
+  margin: 10% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container nav {
+  margin: 32px 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.container nav button {
+  height: 40px;
+  border: 0px;
+  border-radius: 10%;
+}
+
+.container nav button.unactive {
+  opacity: 0.4;
+}
+
+.container nav button img {
+  height: 100%;
+}
+
+.type-button {
+  background-color: var(--color-black);
+  margin: 0px;
+}
+
+.type-button:hover {
+  background-color: var(--color-light-grey);
+}
+
+.color-button {
+  margin: 8px 0;
+  padding: 10px;
+}
+
+.color-button:hover {
+  color: var(--color-white);
+}
+
+#yellow {
+  background-color: var(--color-yellow);
+}
+
+#pink {
+  background-color: var(--color-pink);
+}
+
+#blue {
+  background-color: var(--color-blue);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+section a {
+  text-decoration: none;
+  color: var(--color-black);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+section a article {
+  background-color: var(--color-white);
+  margin: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+section a article {
+  background-color: var(--color-white);
+  margin: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+section a article img {
+  height: 40px;
+  margin-right: 16px;
+}
+
+.type-hidden {
+  display: none;
+}
+
+.color-hidden {
+  display: none;
+}
+
+@media screen and (min-width: 540px) {
+  .container nav button {
+    height: 50px;
+  }
+
+  .color-button {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin: 70px auto;
+    width: 700px;
+  }
+}
