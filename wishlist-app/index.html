@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="layout">
+      <header>WishList</header>
+
+      <main>
+        <!-- shopping list -->
+        <ul class="shopping-list"></ul>
+      </main>
+
+      <label for="new-item"></label>
+      <input type="text" id="new-item", name="item" maxlength="15" placeholder="(최대 15글자)">
+
+      <footer>
+        <i class="fas fa-plus-circle addBtn"></i>
+      </footer>
+    </div>
+
+    <script src="src/main.js"></script>
+  </body>
+</html>
