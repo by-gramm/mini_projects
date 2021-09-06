@@ -1,6 +1,6 @@
 # 쇼핑 목록앱 만들기
 
-드림코딩  [<프론트엔드 필수 브라우저 101>](https://academy.dream-coding.com/courses/browser101) 강의 中 실습7
+드림코딩  [<프론트엔드 필수 브라우저 101>](https://academy.dream-coding.com/courses/browser101) 강의 中 실습7 / 실습9
 
 <br>
 
@@ -8,9 +8,9 @@
 
 - 추가 및 삭제가 가능한 쇼핑 목록앱 구현
 
-- `Create`: 입력창에 내용을 입력한 뒤, Enter키를 치거나 추가 버튼을 클릭하면 요소 추가
+- `Create` : 입력창에 내용을 입력한 뒤, Enter키를 치거나 추가 버튼을 클릭하면 요소 추가
 
-- `Delete`: 삭제 버튼(쓰레기통 아이콘)을 클릭하면 해당 요소 삭제
+- `Delete` : 삭제 버튼(쓰레기통 아이콘)을 클릭하면 해당 요소 삭제
 
 <br>
 
@@ -42,7 +42,7 @@ for (const deleteBtn of deleteBtns) {
 
 #### 해결
 
-리스트에 요소를 추가할 때마다, 새로 만들어진 삭제 버튼에 이벤트를 등록했다. 이를 통해, 새로 추가된 요소에 대해서도 삭제 기능을 구현할 수 있었다.
+리스트에 요소를 추가할 때마다, 새로 만들어진 삭제 버튼에 이벤트를 등록했다. 이를 통해, 새로 추가된 요소에 대해서도 삭제 기능을 구현할 수 있었다. (하지만 버튼을 만들 때마다 이벤트를 등록하는 것이 좋은 방식은 아니다. 이는 아래 3번에서 다시 수정한다.)
 
 ```javascript
 function createItem(value) {
@@ -80,4 +80,27 @@ function addItem() {
   }
   ...
 }
+```
+
+<br>
+
+### 3. 이벤트 위임 (실습 9 추가)
+
+#### 문제
+
+1번에서는 삭제 버튼을 만들 때마다, 새로 만들어진 삭제 버튼에 이벤트를 등록했다. 
+
+#### 해결
+
+`이벤트 위임(event delegation)`을 통해 삭제 버튼 전체에 한번에 이벤트를 등록할 수 있다. 또한 dataset을 활용하여 클릭한 버튼과 같은 id를 가진 요소를 삭제할 수 있도록 했다.
+
+```javascript
+// 이벤트 위임을 통해 삭제 버튼 전체에 한번에 이벤트 등록
+items.addEventListener('click', event => {
+  const id = event.target.dataset.delete_id;
+  if (id) {
+    const toBeDeleted = document.querySelector(`.item[data-id="${id}"]`);
+    toBeDeleted.remove();
+  }
+})
 ```
