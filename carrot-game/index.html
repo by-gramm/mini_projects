@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  </head>
+  <body>
+    <main>
+      <!-- playBtn, stopBtn, timer, counter -->
+      <div class="data">
+        <button class="playBtn larger-on-hover">
+          <i class="fas fa-play"></i>
+        </button>
+        <button class="stopBtn larger-on-hover display-none">
+          <i class="fas fa-stop"></i>
+        </button>
+        <time class="timer">00:10</time>
+        <div class="counter">10</div>
+      </div>
+
+      <!-- popup (retryBtn, message) -->
+      <div class="popup hidden">
+        <button class="retryBtn larger-on-hover">
+          <i class="fas fa-undo"></i>
+        </button>
+        <span class="message"></span>
+      </div>
+    </main>
+
+    <!-- carrots, bugs -->
+    <div class="images"></div>
+
+    <script src="src/main.js"></script>
+  </body>
+</html>
