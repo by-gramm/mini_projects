@@ -92,6 +92,13 @@ main {
   color: white;
 }
 
+.gameField {
+  width: 800px;
+  height: 220px;
+  margin: 0 auto;
+  transform: translateY(-270px);
+}
+
 .carrot, .bug {
   cursor: pointer;
 }

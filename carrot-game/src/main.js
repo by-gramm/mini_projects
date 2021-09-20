@@ -4,7 +4,8 @@ const retryBtn = document.querySelector('.retryBtn');
 
 const timerElement = document.querySelector('.timer');
 const counterElement = document.querySelector('.counter');
-const images = document.querySelector('.images');
+const gameField = document.querySelector('.gameField');
+const fieldRect = gameField.getBoundingClientRect();
 
 const popup = document.querySelector('.popup');
 const message = document.querySelector('.message');
@@ -29,7 +30,7 @@ const removeAttribute = (element, attribute) => {
 
 // 1. 당근 & 곤충
 
-images.addEventListener('click', event => {
+gameField.addEventListener('click', event => {
   // 1) 당근을 클릭한 경우 => 해당 당근을 지우고, 카운터 숫자를 1 뺀다.
   const id = event.target.dataset.id;
   if (id) {
@@ -55,10 +56,10 @@ const getRandomValue = (min, max) => {
 // 당근 n개를 임의의 위치에 배치하는 함수
 const showCarrots = (n) => {
   for (let i = 0; i < n; i++) {
-    let randomX = getRandomValue(window.innerWidth / 2 - 375, window.innerWidth / 2 + 325);
-    let randomY = getRandomValue(250, 425);
+    const randomX = getRandomValue(0, fieldRect.width - 66);
+    const randomY = getRandomValue(0, fieldRect.height - 80);
 
-    images.innerHTML += `<img src="img/carrot.png" alt="carrot" class="carrot absolute larger-on-hover" 
+    gameField.innerHTML += `<img src="img/carrot.png" alt="carrot" class="carrot absolute larger-on-hover" 
       data-id=${i} style="top: ${randomY}px; left: ${randomX}px;"
     >`;
   }
@@ -67,10 +68,10 @@ const showCarrots = (n) => {
 // 곤충 n마리를 임의의 위치에 배치하는 함수
 const showBugs = (n) => {
   for (let i = 0; i < n; i++) {
-    let randomX = getRandomValue(window.innerWidth / 2 - 375, window.innerWidth / 2 + 325);
-    let randomY = getRandomValue(250, 425);
+    const randomX = getRandomValue(0, fieldRect.width - 50);
+    const randomY = getRandomValue(0, fieldRect.height - 50);
 
-    images.innerHTML += `<img src="img/bug.png" alt="bug" class="bug absolute larger-on-hover"
+    gameField.innerHTML += `<img src="img/bug.png" alt="bug" class="bug absolute larger-on-hover"
       style="top: ${randomY}px; left: ${randomX}px;"
     >`;
   }
@@ -78,7 +79,7 @@ const showBugs = (n) => {
 
 // 화면에 당근과 곤충을 보여주는 함수
 const setCarrotsandBugs = () => {
-  images.innerHTML = "";
+  gameField.innerHTML = "";
   showCarrots(10);
   showBugs(10);
 }

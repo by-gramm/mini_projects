@@ -6,7 +6,7 @@
 
 > ## 🗓 프로젝트 기간
 
-- 2021.09.08 ~ 2021.09.14
+- 2021.09.08 ~ 2021.09.14, 2021.09.19
 
 <br>
 
@@ -141,3 +141,60 @@ const endGame = () => {
 }
 ```
 
+<br>
+
+### 3. 벌레와 당근 랜덤 배치하기
+
+처음에는 전체 브라우저 크기를 기준으로, 당근과 곤충이 올 수 있는 영역을 계산한 다음, 랜덤 위치에 배치했다.
+
+```javascript
+// 당근 n개를 임의의 위치에 배치하는 함수
+const showCarrots = (n) => {
+  for (let i = 0; i < n; i++) {
+    let randomX = getRandomValue(window.innerWidth / 2 - 375, window.innerWidth / 2 + 325);
+    let randomY = getRandomValue(250, 425);
+
+    gameField.innerHTML += `<img src="img/carrot.png" alt="carrot" class="carrot absolute larger-on-hover" 
+      data-id=${i} style="top: ${randomY}px; left: ${randomX}px;"
+    >`;
+  }
+}
+```
+
+위 코드의 문제는, 당근의 위치를 계산하는 부분이 게임 화면의 크기 및 브라우저의 크기에 의존적이라는 점이다. 
+
+위 문제를 해결하기 위해, 우선 당근과 게임이 배치될 필드 부분(`gameField`)을 정의했다. 그런데 필드의 위치를 팝업창이 이미 차지하고 있기 때문에, 그 아래에 영역을 만든 후, `transform: translate`를 통해 위치를 조정했다.
+
+```css
+.gameField {
+  width: 800px;
+  height: 220px;
+  margin: 0 auto;
+  transform: translateY(-270px);
+}
+```
+
+<p align="center">
+  <img src="README.assets/image01.png" width="80%">
+</p>
+
+그 후, 해당 영역을 기준으로 랜덤한 좌표를 만들었다. 각 당근/곤충 이미지 요소에 `position: absolute` 속성을 추가하여, 브라우저 전체가 아니라 부모 요소(`gameField`)를 기준으로 상대적인 위치를 가질 수 있도록 했다.
+
+또한 랜덤한 좌표를 만들 때, `gameField`의 가로/세로 길이를 재기 위해, `getBoundingClientRect()` 메서드를 활용했다.
+
+```javascript
+const gameField = document.querySelector('.gameField');
+const fieldRect = gameField.getBoundingClientRect();
+
+// 당근 n개를 임의의 위치에 배치하는 함수
+const showCarrots = (n) => {
+  for (let i = 0; i < n; i++) {
+    const randomX = getRandomValue(0, fieldRect.width - 66);
+    const randomY = getRandomValue(0, fieldRect.height - 80);
+
+    gameField.innerHTML += `<img src="img/carrot.png" alt="carrot" class="carrot absolute larger-on-hover" 
+      data-id=${i} style="top: ${randomY}px; left: ${randomX}px;"
+    >`;
+  }
+}
+```
