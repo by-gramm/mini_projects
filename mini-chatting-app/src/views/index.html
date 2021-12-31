@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2021 CHAT</title>
+  <!-- mvp.css 적용 -->
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <style>
+    :root {
+      --color-purple: rgb(90, 55, 195);
+      --color-red: rgb(248, 72, 94);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .container header {
+      background-color: var(--color-purple);
+      display: flex;
+      padding-bottom: 0;
+    }
+
+    .container header a {
+      margin: 0 auto;
+    }
+
+    .container header a img {
+      width: 150px;
+    }
+
+    .setting {
+      display: flex;
+    }
+
+    .width_100 {
+      width: 100%;
+    }
+
+    .between {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #nickname, #enter {
+      border-left: 3px solid var(--color-purple);
+    }
+
+    .setting div {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    #room ul {
+      list-style: none;
+    }
+
+    #room ul .red {
+      color: var(--color-red);
+    }
+  </style>
+</head>
+<body>
+  <div class="container" >
+    <!-- header -->
+    <header>
+      <a href="">
+        <img src="https://media.vlpt.us/images/ready2start/post/fd583255-8b59-4290-bc7f-77849653d237/logo.png" alt="">
+      </a>
+    </header>
+
+    <main>
+      <div class="setting">
+        <div>
+          <!-- 닉네임 입력 폼 -->
+          <form action="" id="nickname">
+            <input placeholder="닉네임을 입력하세요" type="text" required class="width_100">
+            <div class="between">
+              <button>저장</button>
+              <h3 id="my-nickname"></h3>
+            </div>
+          </form>
+        </div>
+        <div id="welcome">
+          <!-- 채팅방 이름 입력 폼 -->
+          <form action="" id="enter">
+            <input placeholder="채팅방 이름을 입력하세요" type="text" required class="width_100">
+            <div class="between">
+              <button>저장</button>
+              <h3 id="room-title"></h3>
+            </div>
+          </form>
+        </div>  
+      </div>
+      
+      <div id="room">
+        <!-- 채팅 목록 -->
+        <ul></ul>
+        <!-- 메시지 입력 폼 -->
+        <form action="" id="message">
+          <input placeholder="메시지를 입력하세요" type="text" required>
+          <button>전송</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- socket.io 불러오기 -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- app.js 불러오기 -->
+  <script src="/public/js/app.js"></script>
+</body>
+</html>

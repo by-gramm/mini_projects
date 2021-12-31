@@ -1,0 +1,22 @@
+{
+  "name": "gramm_chat",
+  "version": "1.0.0",
+  "description": "socket.io를 활용한 미니 채팅 앱",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/node": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "socket.io": "^4.4.0",
+    "ws": "^8.4.0"
+  }
+}
